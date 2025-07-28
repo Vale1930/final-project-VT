@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="spotify-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+                    alt="Spotify Logo">
+                <h1>Spotify </h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" id="nav-dashboard"><span>Home</span></li>
+                    <li id="nav-topartists"><span>Top Artists</span></li>
+                    <li id="nav-topsongs"><span>Top Albums</span></li>
+                    <li id="nav-trends"><span>Trends</span></li>
+                    <li id="nav-treemap"><span>Explicit songs </span></li>
+                </ul>
+            </nav>
+            <footer>
+            </footer>
+        </aside>
+        <main>
+            <header>
+                <h2> Spotify 2024 </h2>
+                <div class="actions">
+                    <button class="theme-btn" id="toggle-theme" title="Cambiar tema">🌙</button>
+                </div>
+            </header>
+
+            <div class="welcome-banner">
+                <h2>Welcome to <span class="highlight">Spotify Analyst</span>!</h2>
+                <p>
+                    We invite you to explore each section and discover the songs and artists that are making history on
+                    Spotify.
+                </p>
+            </div>
+            <section class="dashboard" id="dashboard-section">
+                <div class="card card-link" data-target="topartists-section">
+                    <div class="card-header">
+                        <h3>Top 10 Most Streamed Artists </h3>
+                        <span style="color: #f1c40f">Discover which artists have accumulated the most streams on Spotify
+                            from its beginnings up to 2024.</span></h3>
+                    </div>
+                </div>
+                <div class="card card-link" data-target="topsongs-section">
+                    <div class="card-header">
+                        <h3>Top 10 Most Streamed Albums up to 2024</h3>
+                        <span style="color: #f1c40f">Explore the public’s favorite albums and see how many times they
+                            have been streamed on Spotify up to the current year.</span>
+                    </div>
+                </div>
+                <div class="card card-link" data-target="trends-section">
+                    <div class="card-header">
+                        <h3>Streams Evolution from 2008 to 2024 </h3>
+                        <span style="color: #f1c40f">See how the number of streams on Spotify has grown since its launch
+                            up to today.</span>
+                    </div>
+                </div>
+                <div class="card card-link" data-target="treemap-section">
+                    <div class="card-header">
+                        <h3>Explicit Songs on Spotify by Year </h3>
+                        <span style="color: #f1c40f">Analyze the proportion of songs with explicit content that are
+                            added to Spotify each year.</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topsongs-section" style="display:none;">
+                <div class="chart-album-container">
+                    <div class="card-graphic" id="card-album">
+                        <div class="card-header-graphic">
+                            <h3>
+                                <span>Top 10 Most Streamed Albums up to 2024</span>
+                            </h3>
+                            <span class="desc">
+                                Click on any album’s bar to see its cover photo and total accumulated streams.
+                            </span>
+                        </div>
+                        <div class="chart-area" id="chart2-solo"></div>
+                    </div>
+                    <div class="album-info" id="album-info"></div>
+                </div>
+            </section>
+
+            <section class="dashboard" id="topartists-section" style="display:none;">
+                <div class="card-graphic2" id="card-1-solo">
+                    <div class="card-header-graphic">
+                        <h3>
+                            <span>Top 10 Most Streamed Artists</span>
+                        </h3>
+                        <span class="desc">
+                            Click on any album’s bar to see its cover photo and total accumulated streams.
+                        </span>
+                    </div>
+                    <div class="chart-area" id="chart1-solo"></div>
+                </div>
+            </section>
+            <section class="dashboard" id="trends-section" style="display:none;">
+                <div class="card-graphic3" id="card-3-solo">
+                    <div class="card-header-graphic">
+                        <div class="graphic3-btn-container"><button id="toggle-chart-type"
+                                class="button-graphic3">Cambiar a barras</button></div>
+
+                        <h3>
+                            <span>Streams Evolution from 2008 to 2024 </span>
+                        </h3>
+                        <span class="desc">
+                        </span>
+                    </div>
+                    <div class="chart-area" id="chart3-solo"></div>
+                </div>
+            </section>
+            <section class="dashboard" id="treemap-section" style="display:none;">
+                <div class="card-graphic4" id="card-4-solo">
+                    <div class="card-header-graphic">
+                        <h3>
+                            <span>Explicit Songs on Spotify by Year</span>
+                        </h3>
+                    </div>
+                    <div class="chart-area-2" id="treemap-explicit"></div>
+                </div>
+            </section>
+            <section>
+                <h5> Elaborated by Valeria Ramirez, Esther Apaza, Janeth Valdivia, Estefania Dominguez, Alejandro
+                    Caballero & Paulina Chiquete </h5>
+            </section>
+
+
+        </main>
+
+    </div>
+    <div id="tooltip" class="tooltip"></div>
+    <div id="selected-info" class="selected-info"></div>
+    <script src="main.js"></script>
+</body>
+
+</html>
