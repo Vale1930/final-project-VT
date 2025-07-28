@@ -436,7 +436,7 @@ This chart shows the evolution of the total number of streams per year based on 
         .data(byYear)
         .on("mousemove", function (event, d) {
             showTooltip(
-                `<b>Año:</b> ${d.year}<br><b>Streams:</b> ${d3.format(",")(d.streams)}` + (d.year === 2008 ? "<br><span style='color:#fa233b'>¡Año de lanzamiento de Spotify!</span>" : ""),
+                `<b>Year:</b> ${d.year}<br><b>Streams:</b> ${d3.format(",")(d.streams)}` + (d.year === 2008 ? "<br><span style='color:#fa233b'>Spotify launch year!</span>" : ""),
                 event.pageX, event.pageY
             );
             d3.select(this).attr("fill", "#fa233b");
@@ -449,9 +449,9 @@ This chart shows the evolution of the total number of streams per year based on 
             selected = d;
             document.getElementById("selected-info").innerHTML = `
                 <div class="selected-card">
-                    <b>Año seleccionado:</b> ${d.year}<br>
-                    <b>Total de Streams:</b> ${d3.format(",")(d.streams)}
-                    ${d.year === 2008 ? "<br><b style='color:#fa233b'>¡Año de lanzamiento de Spotify!</b>" : ""}
+                    <b>Year:</b> ${d.year}<br>
+                    <b>Total Streams:</b> ${d3.format(",")(d.streams)}
+                    ${d.year === 2008 ? "<br><b style='color:#fa233b'>Spotify launch year!</b>" : ""}
                 </div>
             `;
         });
@@ -543,7 +543,7 @@ This chart shows the evolution of the total number of streams per year based on 
         .style("cursor", "pointer")
         .on("mousemove", function (event, d) {
             showTooltip(
-                `<b>Año:</b> ${d.year}<br><b>Streams:</b> ${d3.format(",")(d.streams)}` + (d.year === 2008 ? "<br><span style='color:#fa233b'>¡Año de lanzamiento de Spotify!</span>" : ""),
+                `<b>Year:</b> ${d.year}<br><b>Streams:</b> ${d3.format(",")(d.streams)}` + (d.year === 2008 ? "<br><span style='color:#fa233b'>Spotify launch year!>" : ""),
                 event.pageX, event.pageY
             );
             d3.select(this).attr("fill", "#fae14f");
@@ -556,9 +556,9 @@ This chart shows the evolution of the total number of streams per year based on 
             selected = d;
             document.getElementById("selected-info").innerHTML = `
                 <div class="selected-card">
-                    <b>Año seleccionado:</b> ${d.year}<br>
-                    <b>Total de Streams:</b> ${d3.format(",")(d.streams)}
-                    ${d.year === 2008 ? "<br><b style='color:#fa233b'>¡Año de lanzamiento de Spotify!</b>" : ""}
+                    <b>Selected year:</b> ${d.year}<br>
+                    <b>Total Streams:</b> ${d3.format(",")(d.streams)}
+                    ${d.year === 2008 ? "<br><b style='color:#fa233b'>Spotify launch year!</b>" : ""}
                 </div>
             `;
         })
@@ -618,8 +618,8 @@ function renderExplicitTreemap(data, selector = "#treemap-explicit") {
         .attr("fill", d => colorTM(d.data.value))
         .on("mousemove", function (event, d) {
             showTooltip(
-                `<b>Año:</b> ${d.data.year}<br>
-        <b>Porcentaje "Explicit":</b> ${d.data.value.toLocaleString(undefined, { style: "percent", maximumFractionDigits: 1 })}`,
+                `<b>Year:</b> ${d.data.year}<br>
+        <b>Porcentage "Explicit":</b> ${d.data.value.toLocaleString(undefined, { style: "percent", maximumFractionDigits: 1 })}`,
                 event.pageX, event.pageY
             );
             d3.select(this).attr("stroke", "#fff").attr("stroke-width", 4);
