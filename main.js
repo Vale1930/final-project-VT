@@ -1,6 +1,6 @@
 let spotifyData = [];
 let selected = null;
-let chart3Type = "line"; 
+let chart3Type = "line";
 
 const artistImages = {
     "Drake": "https://cdn.britannica.com/37/231937-050-9228ECA1/Drake-rapper-2019.jpg",
@@ -492,9 +492,12 @@ function renderChart3Bar(data, selector = "#chart3", titleSelector = "#title3", 
             .style("margin-bottom", "10px")
             .style("color", "#1db954")
             .style("font-size", "1.05rem")
-            .html(`<b>¿Por qué desde 2008?</b> <br>
-                <span style="color:#b3b3b3">El servicio Spotify fue lanzado en 2008 y revolucionó la industria de la música al ofrecer streaming ilimitado. 
-                Esta gráfica muestra la evolución del número total de streams por año de lanzamiento de las canciones en la plataforma, desde sus inicios hasta el año 2024.</span>`);
+            .html(`<b>Why since 2008?</b> <br>
+                <span style="color:#b3b3b3">
+Spotify was launched in 2008 and revolutionized the music industry by offering unlimited streaming.  
+This chart shows the evolution of the total number of streams per year based on the release year of songs on the platform, from its beginnings to the current year.
+</span>
+`);
     }
 
     const margin = { top: 30, right: 25, bottom: 35, left: 60 },
@@ -568,7 +571,7 @@ function renderChart3Bar(data, selector = "#chart3", titleSelector = "#title3", 
 
 
 function renderExplicitTreemap(data, selector = "#treemap-explicit") {
- 
+
     d3.select(selector).selectAll("*").remove();
 
     const nestedTreemap = d3.rollups(
